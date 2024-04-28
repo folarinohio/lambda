@@ -1,0 +1,70 @@
+
+/*
+Online Java - IDE, Code Editor, Compiler
+
+Online Java is a quick and easy tool that helps you to build, compile, test your programs online.
+*/
+import java.util.*;
+public class Main
+{
+    
+    public static void main(String[] args) {
+        System.out.println("Welcome to Online IDE!! Happy Coding :)");
+        //List numbrs = (List.of(12,9,13,4,15));
+        printAllNumbersInListStructured(List.of(12,9,13,4,15));
+        printEvenAllNumbersInListStructured(List.of(12,9,13,4,15));
+        printSquaresOfEvenNumbersInListStructured(List.of(12,9,13,4,15));
+        //List<String> courses = List.of("Spring", "Spring Boot","API," ,"Microservices", "AWS" , "PCF","Azure","Docker", "Kubernetes");
+        functionlee(List.of("Spring", "Spring Boot","API" ,"Microservices", "AWS" , "PCF","Azure","Docker", "Kubernetes"));
+    }
+    
+    //private static void print(int numbrs) {
+      //  System.out.println(numbrs);
+    //}
+    
+    //private static boolean isEven(int numbrs) {
+      //return numbrs % 2 == 0; 
+        
+    //}
+    //
+    
+        private static void printAllNumbersInListStructured(List<Integer> numbers) {
+        //for(int number : numbers) {
+         //   System.out.println(number);
+         
+        //numbers.stream()
+        //.forEach(System.out::println); //Method Reference
+            
+        }
+        
+         private static void printEvenAllNumbersInListStructured(List<Integer> numbers) {
+        numbers.stream()
+        //.filter(Main::isEven)
+        .filter(nums -> nums%2 == 1) 
+        .forEach(System.out::println);
+         }
+         
+          private static void functionlee(List<String> numbers) {
+        numbers.stream()
+        //.filter(Main::isEven)// custom static method
+        //.filter(nums -> nums.contains("Spring"))
+        .map(nums ->nums + " "+ nums.length() + " Done")
+        //.map(nums -> "Omo Adeniyi")
+        .forEach(System.out::println);
+         }
+         
+         
+         private static void printSquaresOfEvenNumbersInListStructured(List<Integer> numbers) {
+        //for(int number : numbers) {
+         //   System.out.println(number);
+         
+         
+         
+        numbers.stream()
+        .filter(nums -> nums%2 == 1)
+        .map(nums -> nums * nums * nums) //mapping is for this kind of operation. It means map to.
+        .forEach(System.out::println); //Method Reference
+        System.out.println("done");
+            
+        }
+}
